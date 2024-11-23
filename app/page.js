@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, ShoppingCart, Facebook, Instagram, Twitter, Phone, Diamond, Lock, Truck, RotateCcw, Watch, GemIcon, Menu, X, User, ArrowRight, Star } from 'lucide-react'
+import { ChevronDown, ShoppingCart, Facebook, Instagram, Twitter, Phone, Diamond, Lock, Truck, RotateCcw, Watch, GemIcon, Menu, X, User, ArrowRight, Star, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -99,22 +99,7 @@ export default function LandingPage() {
           </motion.div>
           <div className="hidden md:flex space-x-6">
             <CategoryDropdown />
-            <Link href="#" className="text-gray-600 hover:text-gray-900">ABOUT</Link>
-          </div>
-          <div className="flex items-center space-x-4">
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              className="text-gray-600 flex items-center"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              (+123) 456 7890
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }}>
-              <Link href="/auth" className="text-gray-600 hover:text-gray-900">
-                <ShoppingCart className="w-6 h-6" />
-              </Link>
-            </motion.div>
-            <Link href="/auth" className="text-gray-600 hover:text-gray-900 hidden sm:inline-block">Customer Support</Link>
+            <Link href="/about-us" className="text-gray-600 hover:text-gray-900">ABOUT</Link>
           </div>
         </div>
       </nav>
@@ -159,7 +144,7 @@ export default function LandingPage() {
               <div className="absolute inset-0 bg-white bg-opacity-70 flex flex-col justify-center p-8 md:p-12">
                 <h2 className="text-3xl md:text-5xl font-light mb-4">Golden Memory</h2>
                 <p className="mb-4 text-sm md:text-base">Indulge in the opulence of Golden Memory, a mesmerizing jewelry collection fit for a queen. Embrace your inner allure with exquisite designs exclusive in our store to your heart content.</p>
-                <Link href='/auth' className="text-gray-900 hover:underline flex items-center text-sm md:text-base">
+                <Link href="/auth" className="text-gray-900 hover:underline flex items-center text-sm md:text-base">
                   View Full Collection <ChevronDown className="ml-2 w-4 h-4 rotate-[-90deg]" />
                 </Link>
               </div>
@@ -272,11 +257,11 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12 ">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">About AXELS</h3>
+              <h3 className="text-lg font-semibold mb-4 ">About AXELS</h3>
               <p className="text-sm text-gray-400 mb-4">Crafting timeless elegance since 1920</p>
               <div className="flex space-x-4">
                 {[
@@ -309,22 +294,35 @@ export default function LandingPage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="text-sm text-gray-400 space-y-2">
-                <li><Link href="/auth" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><Link href="/auth" className="hover:text-white transition-colors">Shop</Link></li>
-                <li><Link href="/auth" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="/auth" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
+                <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="text-gray-400 flex items-center"
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              (+123) 456 7890
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="text-gray-400 flex items-center"
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              Customer Support ka mail
+            </motion.div>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
-              <ul className="text-sm text-gray-400 space-y-2">
-                <li><Link href="/auth" className="hover:text-white transition-colors">FAQs</Link></li>
-                <li><Link href="/auth" className="hover:text-white transition-colors">Shipping & Returns</Link></li>
-                <li><Link href="/auth" className="hover:text-white transition-colors">Size Guide</Link></li>
-                <li><Link href="/auth" className="hover:text-white transition-colors">Care Instructions</Link></li>
+              <ul className="text-sm text-gray-400 space-y-2 ">
+                <li><Link href="/about-us?section=faq" className="hover:text-white transition-colors">FAQs</Link></li>
+                <li><Link href="/about-us?section=shipping" className="hover:text-white transition-colors">Shipping & Returns</Link></li>
+                <li><Link href="/about-us?section=size-guide" className="hover:text-white transition-colors">Size Guide</Link></li>
+                <li><Link href="/about-us?section=care" className="hover:text-white transition-colors">Care Instructions</Link></li>
               </ul>
             </div>
-            <div className="lg:col-span-1 md:col-span-2">
+            <div className="lg:col-span-1 md:col-span-2 hover:text-white">
               <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
               <p className="text-sm text-gray-400 mb-4">Subscribe to receive updates, access to exclusive deals, and more.</p>
               <form className="flex flex-col sm:flex-row">
@@ -333,13 +331,8 @@ export default function LandingPage() {
               </form>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 mt-8 text-center text-sm text-gray-400">
+          <div className="border-t border-gray-800 pt-8 mt-8 text-center text-sm text-gray-400 hover:text-white">
             <p>&copy; 2024 AXELS Jewelry. All rights reserved.</p>
-            <div className="mt-2 space-x-4">
-              <Link href="/auth" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/auth" className="hover:text-white transition-colors">Terms of Service</Link>
-              <Link href="/auth" className="hover:text-white transition-colors">Ethical Sourcing</Link>
-            </div>
           </div>
         </div>
       </footer>
