@@ -417,7 +417,7 @@ export default function AboutUsContent() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Image
-                      src="/images/ring-size-chart.jpg"
+                      src="/placeholder.svg?height=300&width=400"
                       alt="Ring Size Chart"
                       width={400}
                       height={300}
@@ -446,7 +446,7 @@ export default function AboutUsContent() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Image
-                      src="/images/necklace-length-guide.jpg"
+                      src="/placeholder.svg?height=300&width=400"
                       alt="Necklace Length Guide"
                       width={400}
                       height={300}
