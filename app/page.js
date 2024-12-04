@@ -95,7 +95,7 @@ export default function LandingPage() {
             transition={{ duration: 0.5 }}
             className="text-2xl font-semibold"
           >
-            AXELS
+            Chaman
           </motion.div>
           <div className="hidden md:flex space-x-6">
             <CategoryDropdown />
